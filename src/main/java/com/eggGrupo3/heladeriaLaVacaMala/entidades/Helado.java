@@ -3,9 +3,11 @@ package com.eggGrupo3.heladeriaLaVacaMala.entidades;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
+@Data
 public class Helado {
     @Id
     @GeneratedValue(generator = "uuid")
