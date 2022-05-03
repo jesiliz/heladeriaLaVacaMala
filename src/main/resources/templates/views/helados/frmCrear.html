@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+    <head th:replace="plantilla/template :: head">
+        <title>La Vaca Mala</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <header th:replace="plantilla/template :: header"></header>
+
+        <div class="container">
+
+            <div class="card bg-light">
+                <div class="card-header bg-dark text-white" th:text="${titulo}"></div>
+                <div class="card-body">
+                    <form th:action="@{/views/helados/save}" th:Object="${helado}" method="post" enctype="multipart/form-data" >
+                        <div class="form-group" row >
+                            <input type="hidden" th:field="*{id}">
+                            
+                            <label class="colm-md-2" for="sabor">Sabor:</label>
+                            <input type="text" th:field="*{sabor}" class="form-control form-control-sm col-md-6" id="sabor">
+                            <small></small>
+                        </div>
+                        <div class="form-group" row >
+                            <label  class="colm-md-2" for="precio">Precio:</label>
+                            <input type="text" th:field="*{precio}" class="form-control form-control-sm col-md-6" id="precio">
+                            <small></small>
+                        </div>
+                        <div class="form-group" row >
+                            <label  class="colm-md-2" for="stock">Stock:</label>
+                            <input type="text" th:field="*{stock}" class="form-control form-control-sm col-md-6" id="stock">
+                            <small></small>
+                        </div>
+                       
+                        <div class="form-group" row >
+                             <label  class="colm-md-2" for="imagen">Imagen:</label>
+                             <input type="file" name="file" class="form-control form-control-sm col-md-6" id="imagen">
+                        </div>
+
+                        <div class="card-footer bg-dark">
+                            <input type="submit" class="btn btn-primary btn-sm" value="Guardar"/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <footer th:replace="plantilla/template :: footer"></footer>
+    </body>
+</html>

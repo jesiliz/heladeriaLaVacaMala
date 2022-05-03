@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+    <head th:replace="plantilla/template :: head">
+        <title>La Vaca Mala</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <header th:replace="plantilla/template :: header"></header>
+
+        <div class="container">
+            <h1 th:text="${titulo}"></h1>
+        </div>
+
+        <div class="container">
+            <a class="btn btn-primary btn-sm" th:href="@{/views/helados/create}" th:text="'Agregar Sabor'" title="Agregar Nuevo Sabor">       
+            </a>
+            
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Sabor</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Stock</th>
+                        <th scope="col">Editar</th>
+                        <th scope="col">Eliminar</th>
+                        <th scope="col">Detalle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="hl:${helados}">
+                        <th scope="row" th:text="${hl.id}"></th>
+                        <td th:text="${hl.sabor}"></td>
+                        <td th:text="${hl.precio}"></td>
+                        <td th:text="${hl.stock}"></td>
+                        <td>
+                            <a class="btn btn-success btn-sm" th:href="@{/views/helados/edit/} + ${hl.id}" th:text="'Editar'" title="Editar Sabor">       
+                            </a>
+                        </td>
+                        <td >
+                            <a class="btn btn-danger btn-sm" th:href="@{/views/helados/delete/} + ${hl.id}" th:text="'Eliminar'" title="Eliminar Sabor"
+                               onclick="return confirm('Esta seguro que quiere eliminar este registro?')" >      
+                                
+                            </a>
+                        </td>
+                         <td >
+                            <a class="btn btn-warning btn-sm" th:href="@{/views/helados/detalle/} + ${hl.id}" th:text="'Detalle'" title="Detalle Sabor"
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <footer th:replace="plantilla/template :: footer"></footer>
+    </body>
+</html>

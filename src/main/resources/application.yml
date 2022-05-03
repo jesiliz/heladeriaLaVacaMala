@@ -5,6 +5,10 @@ spring:
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
+    servelet:
+        multipart:
+            max-file-size: 5MB
+            max-request-size: 5MB
 #Configuración Creación de tablas (Hibernate)
   jpa:
     show-sql: true
@@ -12,7 +16,10 @@ spring:
       ddl-auto: update
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+       dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+       format-sql: true
 #Que thymeleaf no guarde datos en cache
   thymeleaf:
     cache: false
+    
+ 

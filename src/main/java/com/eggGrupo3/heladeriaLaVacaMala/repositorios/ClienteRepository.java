@@ -1,10 +1,10 @@
 package com.eggGrupo3.heladeriaLaVacaMala.repositorios;
 
-import com.eggGrupo3.heladeriaLaVacaMala.entidades.Helado;
+import com.eggGrupo3.heladeriaLaVacaMala.entidades.Cliente;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface HeladoRepository extends CrudRepository<Helado, Long>{
+public interface ClienteRepository extends CrudRepository<Cliente,Long>{
     
 }

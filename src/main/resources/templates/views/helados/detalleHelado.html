@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+    <head th:replace="plantilla/template :: head">
+        <title>La Vaca Mala</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <header th:replace="plantilla/template :: header"></header>
+
+        <div class="container">
+
+            <div class="card bg-ligth">
+                <div class="card-header bg-dark text-white" th:text="${titulo}"></div>
+                <div class="card-body">
+                    <img class="img-thumbnail rounded float-left" 
+                         th:src="@{'/img/'+ ${helado.imagen}}" 
+                         th:alt="${helado.imagen}"
+                         style="max-width:25%;">
+                    
+                    <ul class="list-group">
+                        <li class="list-group-item" th:text="'Sabor: ' +${helado.sabor}"></li>
+                        <li class="list-group-item" th:text="'Precio: ' +${helado.precio}"></li>
+                        <li class="list-group-item" th:text="'Stock: ' +${helado.stock}"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <footer th:replace="plantilla/template :: footer"></footer>
+    </body>
+</html>
