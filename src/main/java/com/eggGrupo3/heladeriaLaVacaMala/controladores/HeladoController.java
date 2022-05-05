@@ -74,7 +74,7 @@ public class HeladoController {
     }
     
     @GetMapping("/detalle/{id}")
-    public String detalleHelado(@PathVariable("id") Long idHelado, Model model, RedirectAttributes attribute){
+    public String detalleHelado(@PathVariable("id") String idHelado, Model model, RedirectAttributes attribute){
         Helado helado = heladoService.buscarPorId(idHelado);
         
         model.addAttribute("titulo","Detalle ");
@@ -84,7 +84,7 @@ public class HeladoController {
     }
     
     @GetMapping("/edit/{id}")
-    public String editar(@PathVariable("id") Long idHelado, Model model, RedirectAttributes attribute){
+    public String editar(@PathVariable("id") String idHelado, Model model, RedirectAttributes attribute){
         Helado helado = heladoService.buscarPorId(idHelado);
         
         model.addAttribute("titulo","Editar Sabor");
@@ -94,7 +94,7 @@ public class HeladoController {
     }
     
     @GetMapping("/delete/{id}")
-    public String eliminar(@PathVariable("id") Long idHelado, RedirectAttributes attribute){
+    public String eliminar(@PathVariable("id") String idHelado, RedirectAttributes attribute){
      
         heladoService.eliminar(idHelado);
         attribute.addFlashAttribute("success", "Registro eliminado con exito!");

@@ -10,6 +10,18 @@
 
         <div class="container">
             <h1>Vaca Mala</h1>
+            <div class="col-lg-3 col-md-6 mb-4" th:each="helado: ${helados}">
+                <div class="card h-100">
+                    <img class="card-img-top"
+                         th:src="@{/img/{image} (image=${helado.imagen})} " alt="">
+                    <div class="card-body">
+                        <p class="card-text" th:text="${helado.sabor}"></p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-success">Ver</a>
+                    </div>
+                </div>
+            </div>
         </div>
 
 

@@ -16,25 +16,32 @@
                     <form th:action="@{/views/helados/save}" th:Object="${helado}" method="post" enctype="multipart/form-data" >
                         <div class="form-group" row >
                             <input type="hidden" th:field="*{id}">
-                            
+
                             <label class="colm-md-2" for="sabor">Sabor:</label>
                             <input type="text" th:field="*{sabor}" class="form-control form-control-sm col-md-6" id="sabor">
-                            <small></small>
                         </div>
+                        
+                        <div class="form-group" row >
+                            <label class="colm-md-2" for="descripcion">Descripción:</label>
+                            <textarea class="form-control" id="descripcion" name="descripcion"
+                                  autocomplete="off"> </textarea>
+                        </div>
+                        
                         <div class="form-group" row >
                             <label  class="colm-md-2" for="precio">Precio:</label>
-                            <input type="text" th:field="*{precio}" class="form-control form-control-sm col-md-6" id="precio">
-                            <small></small>
+                            <input type="text" th:field="*{precio}" class="form-control form-control-sm col-md-6" id="precio"
+                                   autocomplete="off">                        
                         </div>
+                        
                         <div class="form-group" row >
                             <label  class="colm-md-2" for="stock">Stock:</label>
-                            <input type="text" th:field="*{stock}" class="form-control form-control-sm col-md-6" id="stock">
-                            <small></small>
+                            <input type="text" th:field="*{stock}" class="form-control form-control-sm col-md-6" 
+                                   id="stock" autocomplete="off">  
                         </div>
-                       
+
                         <div class="form-group" row >
-                             <label  class="colm-md-2" for="imagen">Imagen:</label>
-                             <input type="file" name="file" class="form-control form-control-sm col-md-6" id="imagen">
+                            <label  class="colm-md-2" for="imagen">Imagen:</label>
+                            <input type="file" name="file" class="form-control form-control-sm col-md-6" id="imagen">
                         </div>
 
                         <div class="card-footer bg-dark">

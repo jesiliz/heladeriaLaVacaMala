@@ -8,9 +8,4 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/pedido")
 public class PedidoController {
     
-    // localhost:8080/pedido/form
-    @GetMapping("/form")
-    public String form(){
-        return "pedido-form";
-    }
 }

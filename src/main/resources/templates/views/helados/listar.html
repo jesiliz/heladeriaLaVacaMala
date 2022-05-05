@@ -17,10 +17,11 @@
             </a>
             
             <table class="table">
-                <thead class="thead-dark">
+                <thead class=" table-dark">
                     <tr>
                         <th scope="col">Id</th>
                         <th scope="col">Sabor</th>
+                        <th scope="col">Descripción</th>
                         <th scope="col">Precio</th>
                         <th scope="col">Stock</th>
                         <th scope="col">Editar</th>
@@ -32,6 +33,7 @@
                     <tr th:each="hl:${helados}">
                         <th scope="row" th:text="${hl.id}"></th>
                         <td th:text="${hl.sabor}"></td>
+                        <td th:text="${hl.descripcion}"></td>
                         <td th:text="${hl.precio}"></td>
                         <td th:text="${hl.stock}"></td>
                         <td>
@@ -52,7 +54,6 @@
                 </tbody>
             </table>
         </div>
-
 
         <footer th:replace="plantilla/template :: footer"></footer>
     </body>

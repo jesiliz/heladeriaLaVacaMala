@@ -10,23 +10,23 @@
 
         <div class="container">
 
-            <div class="card bg-ligth">
-                <div class="card-header bg-dark text-white" th:text="${titulo}"></div>
+            <div class="card bg-ligth ">
+                <div class="card-header text-white" th:text="${titulo}"></div>
                 <div class="card-body">
-                    <img class="img-thumbnail rounded float-left" 
+                    <img class="img-thumbnail float-left" 
                          th:src="@{'/img/'+ ${helado.imagen}}" 
                          th:alt="${helado.imagen}"
                          style="max-width:25%;">
                     
                     <ul class="list-group">
                         <li class="list-group-item" th:text="'Sabor: ' +${helado.sabor}"></li>
+                        <li class="list-group-item" th:text="'Descripcion: ' +${helado.descripcion}"></li>
                         <li class="list-group-item" th:text="'Precio: ' +${helado.precio}"></li>
                         <li class="list-group-item" th:text="'Stock: ' +${helado.stock}"></li>
                     </ul>
                 </div>
             </div>
         </div>
-
 
         <footer th:replace="plantilla/template :: footer"></footer>
     </body>
