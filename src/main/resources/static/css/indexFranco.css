@@ -207,18 +207,24 @@ footer div{
     font-family: 'Roboto';
     color: var(--blanco);
 }
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-
+.contenedor_registrarse,
 .contenedor_login{
     width: 500px;
-    height: 580px;
     background: #ff5c85;
     color: azure;
     border-radius: 10px;
     padding: 30px;
-    margin: 50px;
-    transform: translate(50%, 0%);
+    margin-left: 13rem;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
     box-sizing: border-box;
+    display: inline-block;
 }
 
 .contenedor_registrarse img,
@@ -226,7 +232,7 @@ footer div{
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    position: relative;
+    position: re;
     top: -100px;
     left: 130px;
 }
@@ -312,9 +318,11 @@ footer div{
     height: 170px;
     border-radius: 10px;
     color: white;
-    position: absolute;
     top: 460px;
-    right: 353px;
+    right: 10px;
+    text-align: center;
+    display: inline-block;
+    margin-bottom: 15rem;
 }
 
 .contenedor_ingresa h2,
@@ -325,12 +333,9 @@ footer div{
 
 .contenedor_registrarse{
     width: 500px;
-    height: 750px;
     background: #ff5c85;
     color: azure;
     border-radius: 10px;
     padding: 30px;
-    margin: 50px;
-    transform: translate(50%, 0%);
     box-sizing: border-box;
 }

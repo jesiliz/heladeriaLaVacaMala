@@ -23,12 +23,9 @@ public class UsuarioService implements UserDetailsService {
     @Autowired
     UsuarioRepository usuarioRepository;
 
-//    public void Login() {
-//    }
-
     public Usuario registro(Usuario usuario) throws ErrorService {
         validar(usuario);
-        
+
         String encriptada = new BCryptPasswordEncoder().encode(usuario.getContrasenia());
         usuario.setContrasenia(encriptada);
 
@@ -78,17 +75,25 @@ public class UsuarioService implements UserDetailsService {
         Usuario usuario = usuarioRepository.findByEmail(mail);
         if (usuario != null)
         {
-
             List<GrantedAuthority> permisos = new ArrayList<>();
+            
+            //MEJORAR FORMA PARA OTORGAR ROL DE ADMIN
+            if (usuario.getEmail().equalsIgnoreCase("admin@hotmail.com"))
+            {
+                GrantedAuthority p1 = new SimpleGrantedAuthority("ROLE_ADMIN");
+                permisos.add(p1);
+            } else
+            {
 
-            GrantedAuthority p1 = new SimpleGrantedAuthority("ROLE_USUARIO_REGISTRADO");
-            permisos.add(p1);
-
+                GrantedAuthority p1 = new SimpleGrantedAuthority("ROLE_USUARIO_REGISTRADO");
+                permisos.add(p1);
+            }
             ServletRequestAttributes attr = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
             HttpSession session = attr.getRequest().getSession(true);
             session.setAttribute("usuariosession", usuario);
-
+          
             User user = new User(usuario.getEmail(), usuario.getContrasenia(), permisos);
+            
             return user;
 
         } else

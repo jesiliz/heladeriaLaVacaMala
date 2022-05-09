@@ -36,7 +36,7 @@
                     <a href="/login">Ingresar</a>
                 </div>
             </div>
-            
+
             <div class="carrusel">
                 <h1 id="carruselH1">¿PROBASTE NUESTROS HELADOS?</h1>
                 <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
@@ -71,86 +71,16 @@
             </div>
 
             <div class="tarjetasHelado">
-                <div class="card" style="width: 18rem;">
-                    <img src="https://www.jauja.com.ar/wp-content/uploads/2019/12/cassis_low.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
 
-                <div class="card" style="width: 18rem;">
-                    <img src="https://www.jauja.com.ar/wp-content/uploads/2019/12/cassis_low.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                <div th:each="helado: ${helados}">
+                    <div class="card" style="width: 18rem;" >
+                        <img th:src="@{/img/{image} (image=${helado.imagen})} " class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title text-center" th:text="${helado.sabor}"></h5>
+                            <a th:href="@{/login}" class="btn btn-primary">Pedir</a>
+                        </div>
                     </div>
-                </div>
-
-                <div class="card" style="width: 18rem;">
-                    <img src="https://www.jauja.com.ar/wp-content/uploads/2019/12/cassis_low.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-
-                <div class="card" style="width: 18rem;">
-                    <img src="https://www.jauja.com.ar/wp-content/uploads/2019/12/cassis_low.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-
-                <div class="card" style="width: 18rem;">
-                    <img src="https://www.jauja.com.ar/wp-content/uploads/2019/12/cassis_low.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-
-                <div class="card" style="width: 18rem;">
-                    <img src="https://www.jauja.com.ar/wp-content/uploads/2019/12/cassis_low.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-
-                <div class="card" style="width: 18rem;">
-                    <img src="https://www.jauja.com.ar/wp-content/uploads/2019/12/cassis_low.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-
-                <div class="card" style="width: 18rem;">
-                    <img src="https://www.jauja.com.ar/wp-content/uploads/2019/12/cassis_low.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-
-                <div class="card" style="width: 18rem;">
-                    <img src="https://www.jauja.com.ar/wp-content/uploads/2019/12/cassis_low.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
+                </div>    
             </div>
         </Section>
 
