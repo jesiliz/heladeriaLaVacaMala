@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class HeladoServiceImpl implements IHeladoService {
+public class HeladoServiceImpl implements HeladoService {
 
     @Autowired
     private HeladoRepository heladoRepository;

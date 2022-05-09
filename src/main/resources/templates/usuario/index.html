@@ -74,9 +74,8 @@
             <div class="card" style="width: 18rem;" >
                 <img th:src="@{/img/{image} (image=${helado.imagen})} " class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title" th:text="${helado.sabor}"></h5>
-                    <p class="card-text" th:text="${helado.descripcion}"></p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <h5 class="card-title text-center" th:text="${helado.sabor}"></h5>
+                    <a th:href="@{/heladopedido/{id}  (id=${helado.id})  }" class="btn btn-primary">Pedir</a>
                 </div>
             </div>
         </div>    

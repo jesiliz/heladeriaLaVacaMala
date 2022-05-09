@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+    <head th:replace="plantilla/template :: head">
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title>Vaca Mala</title>
+    </head>
+
+    <body>
+        <div th:replace="plantilla/template :: header"></div>
+
+        <div class="container">
+
+            <h1 class="mt-4 mb-3">
+                Pedido Vaca Mala:  <small>Helado</small>
+            </h1>
+
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a th:href="@{/}">Home</a></li>
+                <li class="breadcrumb-item active">Helado</li>
+            </ol>
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <img class="img-fluid rounded-3" th:src="@{/img/{image} (image=${helado.imagen})}" alt="">
+
+                        </div>
+                        <div class="col-lg-6">
+                            <form th:action="@{/cart}" method="POST">
+                                <input type="hidden" th:value="${helado.id}" name="id">
+                                <h2 class="card-title" th:text="${helado.sabor}"></h2>
+
+                                <ul class="list-group">
+                                    <li class="list-group-item"><h5 th:text=" 'Precio: '+ ${helado.precio} "></h5></li>
+                                    <li class="list-group-item">
+                                        <p th:text=" 'Descripción: '+ ${helado.descripcion} "></p>
+                                    </li>
+                                    <li class="list-group-item"><h6>
+                                            Cantidad: <input type="number" id="cantidad" name="cantidad"
+                                                             autocomplete="off" min="1" max="5" value="1"> Kg
+                                        </h6></li>
+                                </ul>
+
+                                <button type="submit" class="btn btn-dark">Añadir al carrito</button>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer -->
+        <div th:replace="plantilla/template::footer"></div>
+
+    </body>
+
+</html>

@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 
-public interface IHeladoService {
+public interface HeladoService {
     
     public List<Helado>findAll();
     public void guardar(Helado helado);

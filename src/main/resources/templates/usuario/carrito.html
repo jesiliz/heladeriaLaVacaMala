@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+    <head th:replace="plantilla/template :: head">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Vaca Mala</title>
+    </head>
+
+    <body>
+         <div th:include="plantilla/template::header"></div>
+
+        <div class="container">
+            <h1 class="mt-4 mb-3">
+                Vaca Mala <small>Carrito</small>
+            </h1>
+
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a th:href="@{/}">Home</a></li>
+                <li class="breadcrumb-item active">Carrito</li>
+            </ol>
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-9">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Helado</th>
+                                        <th scope="col">Precio</th>
+                                        <th scope="col">Cantidad</th>
+                                        <th scope="col">Total</th>
+                                        <th scope="col">Acción</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr th:each="dpedido:${cart}">
+                                        <td th:text="${dpedido.sabor}"></td>
+                                        <td th:text="${dpedido.precio}"></td>
+                                        <td th:text="${dpedido.cantidad}"></td>
+                                        <td th:text="${dpedido.total}"></td>
+                                        <td><a th:href="@{/delete/cart/{id} (id=${dpedido.helado.id})}" class="btn btn-danger">Quitar</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="col-lg-3">
+                            <h2 class="card-title">SUBTOTAL</h2>
+
+                            <ul class="list-group">
+                                <li class="list-group-item"><h5 th:text="${pedido.total}"></h5></li>
+                                <a th:href="@{/order}" class="btn btn-dark">Ver Orden</a>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+        <div th:replace="plantilla/template :: footer"></div>
+    </body>
+
+</html>

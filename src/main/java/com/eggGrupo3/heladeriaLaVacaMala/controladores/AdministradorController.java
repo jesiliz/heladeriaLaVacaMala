@@ -1,7 +1,6 @@
 package com.eggGrupo3.heladeriaLaVacaMala.controladores;
 
 import com.eggGrupo3.heladeriaLaVacaMala.entidades.Helado;
-import com.eggGrupo3.heladeriaLaVacaMala.servicios.IHeladoService;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import org.springframework.web.bind.annotation.RequestMapping;
+import com.eggGrupo3.heladeriaLaVacaMala.servicios.HeladoService;
 
 
 
@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class AdministradorController {
 
 	@Autowired
-	private IHeladoService heladoService;
+	private HeladoService heladoService;
 
 	@GetMapping("")
 	public String home(Model model) {

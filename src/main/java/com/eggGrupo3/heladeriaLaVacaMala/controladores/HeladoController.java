@@ -1,7 +1,6 @@
 package com.eggGrupo3.heladeriaLaVacaMala.controladores;
 
 import com.eggGrupo3.heladeriaLaVacaMala.entidades.Helado;
-import com.eggGrupo3.heladeriaLaVacaMala.servicios.IHeladoService;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -21,13 +20,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import com.eggGrupo3.heladeriaLaVacaMala.servicios.HeladoService;
 
 @Controller
 @RequestMapping("/views/helados")
 public class HeladoController {
     
     @Autowired
-    private IHeladoService heladoService;
+    private HeladoService heladoService;
     
     @GetMapping("/")
     public String listarHelados(Model model){
