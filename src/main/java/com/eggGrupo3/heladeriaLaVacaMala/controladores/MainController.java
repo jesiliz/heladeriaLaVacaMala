@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Optional;
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
@@ -31,9 +32,14 @@ public class MainController {
     Pedido pedido = new Pedido();
 
     @GetMapping("/")
-    public String index(Model model) {
-        model.addAttribute("helados", heladoService.findAll());
-        return "usuario/index";
+    public String index(Model model, HttpServletRequest request) {
+         if (request.isUserInRole("ROLE_USUARIO_REGISTRADO") || request.isUserInRole("ROLE_ADMIN"))
+        {
+            model.addAttribute("helados", heladoService.findAll());
+            return "inicio";
+        }
+         model.addAttribute("helados", heladoService.findAll());
+        return "index";
     }
 
     @GetMapping("heladopedido/{id}")

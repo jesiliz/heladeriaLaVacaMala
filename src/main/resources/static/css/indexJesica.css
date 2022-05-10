@@ -46,8 +46,8 @@ header{
 .Navbar{
     display: flex;
     justify-content: space-between;
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 30%;
+    margin-right: 30%;
     padding-bottom: 20px;
 }
 .Navbar a{
@@ -90,23 +90,10 @@ header{
     padding-top: 50px;
 }
 /*-----SECCION TITULOS-----*/
-.saludo{
-    position: absolute;
-    z-index: 5000;
-    top: 6rem;
-    left: 3rem;
-    text-align: center;
-}
-.saludo h1,
 .titulos h1{
     color: var(--celeste);
     text-shadow: 2px 2px 0px var(--rosa);
     font-family: 'Orelega One', cursive;
-}
-.saludo p{
-    font-family: 'Orelega One', cursive;
-    color: var(--celeste);
-    font-size: 2rem;
 }
 /*-----HELADOS TARJETAS-----*/
 .tarjetasHelado{

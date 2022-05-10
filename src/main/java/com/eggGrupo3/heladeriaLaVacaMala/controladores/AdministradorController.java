@@ -10,9 +10,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.eggGrupo3.heladeriaLaVacaMala.servicios.HeladoService;
+import org.springframework.security.access.prepost.PreAuthorize;
 
 
-
+@PreAuthorize("hasAnyRole('ROLE_ADMIN')")
 @Controller
 @RequestMapping("/home-admin")
 public class AdministradorController {
